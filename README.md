@@ -20,9 +20,9 @@ Estimate of time needed to complete: **2 hours**
 
 Start time: **8pm**
 
-Finish time: 
+Finish time: still working
 
-Actual time needed to complete: 
+Actual time needed to complete: n/a
 
 
 ========
@@ -32,8 +32,8 @@ Number and name of feature: Feature 3 - CSS Styling
 
 Estimate of time needed to complete: **2 hours**
 
-Start time: **7pm**
+Start time: **7:00pm**
 
-Finish time: **8:30pm**
+Finish time: **8:00pm**
 
-Actual time needed to complete: **1.5 hours**
+Actual time needed to complete: **1 hour**
