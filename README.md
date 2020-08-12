@@ -4,36 +4,36 @@ Number and name of feature: Display Images
 
 Estimate of time needed to complete: 1-1.5 hrs
 
-Start time: 3:20pm
+Start time: **3:20pm**
 
-Finish time: _____
+Finish time: **6pm**
 
-Actual time needed to complete: _____
-
-
-========
-
-
-Number and name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
+Actual time needed to complete: **3 hours**
 
 
 ========
 
 
-Number and name of feature: ________________________________
+Number and name of feature: Feature 2 - Filter Images
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: **2 hours**
 
-Start time: _____
+Start time: **8pm**
 
-Finish time: _____
+Finish time: 
 
-Actual time needed to complete: _____
+Actual time needed to complete: 
+
+
+========
+
+
+Number and name of feature: Feature 3 - CSS Styling
+
+Estimate of time needed to complete: **2 hours**
+
+Start time: **7pm**
+
+Finish time: **8:30pm**
+
+Actual time needed to complete: **1.5 hours**
