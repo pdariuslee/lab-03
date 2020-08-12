@@ -67,13 +67,6 @@ $('select').change(function () {
 });
 
 
-
-
-
-
-
-
-
 // read up on template literal notation
 
 // how to hide w/ jQuery
