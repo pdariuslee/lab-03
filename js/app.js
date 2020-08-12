@@ -20,8 +20,10 @@ Animal.prototype.renderImage = function() {
   // console.log($clonedSectionEl);
 
   // $clonedSectionEl.find('h2').text(this.name);
-  $clonedSectionEl.find('img').attr('src', this.src).attr('alt', this.description);
-  // $clonedSectionEl.find('p').text(this.description);
+  $clonedSectionEl.find('img').attr('src', this.src)
+    .attr('alt', this.description);
+
+  $clonedSectionEl.attr('class',`horned ${this.keyword}`);
 
   $('main').append($clonedSectionEl);
 
@@ -36,23 +38,7 @@ Animal.prototype.filterImages = function(){
     $clonedOptionEl.text(this.keyword);
     $('select').append($clonedOptionEl);
   }
-
 };
-
-
-
-
-//Animal.populateFilter = function()
-//empty array
-//loop pover animal array
-// if no keyword, push into array
-// if empty array has keyword, then skip
-// loop over new array w/ keywords
-//string of option tag w/ keyword -- appended to
-// needs sep optiont tags for dropdown to function
-
-
-
 
 const animalsFromData = hornedAnimals => {
   hornedAnimals.forEach( horns => {
@@ -71,8 +57,49 @@ const pullObject = {
 $.ajax('data/page-1.json', pullObject).then(animalsFromData);
 
 
+$('select').change(function () {
 
-// console.log(animalArray);
+  const selected = $('select option:selected').text();
 
-console.log(testArray);
+  $('.horned').hide();
+  $(`.${selected}`).show();
+
+});
+
+
+
+
+
+
+
+
+
+// read up on template literal notation
+
+// how to hide w/ jQuery
+
+/*
+$('li:first-child').toggle(); // one way
+$('li:first-child').hide(); --> easier
+*/
+
+
+// event listener
+
+
+/*
+
+$('select').val();
+-- pulls value property from html --
+
+1. iterate over array objects
+2. if array keyword matches select's keyword
+3. get that title
+4. select all li's
+5. .each === forEach
+6. this === <li> iterating over
+7. check if the list items text matches the arrays text
+
+*/
+
 
