@@ -2,6 +2,7 @@
 
 // constructor function
 const animalArray = [];
+const testArray = [];
 
 function Animal (title, image_url, description, keyword, horns){
   this.name = title;
@@ -28,14 +29,19 @@ Animal.prototype.renderImage = function() {
 
 Animal.prototype.filterImages = function(){
 
-  const $clonedOptionEl = $('#dropdown').clone();
-
-  $clonedOptionEl.text(this.keyword);
-  $('select').append($clonedOptionEl);
-
-
+  // eslint-disable-next-line no-empty
+  if (testArray.includes(this.keyword)){
+  } else {
+    testArray.push(this.keyword);
+    const $clonedOptionEl = $('#dropdown').clone();
+    $clonedOptionEl.text(this.keyword);
+    $('select').append($clonedOptionEl);
+  }
 
 };
+
+
+
 
 //Animal.populateFilter = function()
 //empty array
@@ -67,5 +73,7 @@ $.ajax('data/page-1.json', pullObject).then(animalsFromData);
 
 
 
-console.log(animalArray);
+// console.log(animalArray);
+
+console.log(testArray);
 
