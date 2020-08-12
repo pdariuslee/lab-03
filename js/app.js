@@ -14,24 +14,15 @@ function Animal (title, image_url, description, keyword, horns){
   animalArray.push(this);
 }
 
-Animal.prototype.renderImage = function() {
 
-  const $clonedSectionEl = $('#photo-template').clone();
-  // console.log($clonedSectionEl);
-
-  // $clonedSectionEl.find('h2').text(this.name);
-  $clonedSectionEl.find('img').attr('src', this.src)
-    .attr('alt', this.description);
-
-  $clonedSectionEl.attr('class',`horned ${this.keyword}`);
-
-  $('main').append($clonedSectionEl);
-
+// ===== render w/ Mustache ===== //
+Animal.prototype.renderMustache = function () {
+  const newHtml = Mustache.render($('#photo-template').html(),this);
+  $('main').append(newHtml);
 };
 
 Animal.prototype.filterImages = function(){
 
-  // eslint-disable-next-line no-empty
   if (!testArray.includes(this.keyword)){
     testArray.push(this.keyword);
     const $clonedOptionEl = $('#dropdown').clone();
@@ -40,22 +31,31 @@ Animal.prototype.filterImages = function(){
   }
 };
 
+
 const animalsFromData = hornedAnimals => {
   hornedAnimals.forEach( horns => {
-    new Animal (horns.title, horns.image_url, horns.description, horns.keyword, horns.horns);
+    new Animal (
+      horns.title,
+      horns.image_url,
+      horns.description,
+      horns.keyword,
+      horns.horns);
   });
 
-  animalArray.forEach(animalValue => animalValue.renderImage());
+  animalArray.forEach(animalValue => animalValue.renderMustache());
 
   animalArray.forEach(animalValue => animalValue.filterImages());
 
 };
+
 const pullObject = {
   method: 'get',
   dataType: 'json'
 };
+
 $.ajax('data/page-1.json', pullObject).then(animalsFromData);
 
+// ====== Event Handler : Filter ===== //
 
 $('select').change(function () {
 
@@ -67,18 +67,11 @@ $('select').change(function () {
 });
 
 
+// ====== NOTES ===== //
+
 // read up on template literal notation
 
 // how to hide w/ jQuery
-
-/*
-$('li:first-child').toggle(); // one way
-$('li:first-child').hide(); --> easier
-*/
-
-
-// event listener
-
 
 /*
 
