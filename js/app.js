@@ -30,8 +30,7 @@ Animal.prototype.renderImage = function() {
 Animal.prototype.filterImages = function(){
 
   // eslint-disable-next-line no-empty
-  if (testArray.includes(this.keyword)){
-  } else {
+  if (!testArray.includes(this.keyword)){
     testArray.push(this.keyword);
     const $clonedOptionEl = $('#dropdown').clone();
     $clonedOptionEl.text(this.keyword);
