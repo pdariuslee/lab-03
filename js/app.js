@@ -1,7 +1,7 @@
 'use strict';
 
 // constructor function
-const animalArray = [];
+let animalArray = [];
 const testArray = [];
 
 function Animal (title, image_url, description, keyword, horns){
@@ -13,6 +13,9 @@ function Animal (title, image_url, description, keyword, horns){
 
   animalArray.push(this);
 }
+
+
+
 
 Animal.prototype.renderImage = function() {
 
@@ -29,6 +32,9 @@ Animal.prototype.renderImage = function() {
 
 };
 
+
+
+
 Animal.prototype.filterImages = function(){
 
   // eslint-disable-next-line no-empty
@@ -40,16 +46,22 @@ Animal.prototype.filterImages = function(){
   }
 };
 
+
+
+
 const animalsFromData = hornedAnimals => {
   hornedAnimals.forEach( horns => {
     new Animal (horns.title, horns.image_url, horns.description, horns.keyword, horns.horns);
   });
 
-  animalArray.forEach(animalValue => animalValue.renderImage());
+  animalArray.forEach(animal => animal.renderImage());
 
-  animalArray.forEach(animalValue => animalValue.filterImages());
+  animalArray.forEach(animal => animal.filterImages());
 
 };
+
+
+
 const pullObject = {
   method: 'get',
   dataType: 'json'
@@ -96,3 +108,27 @@ $('select').val();
 */
 
 
+// ================== Pagination
+
+$('#setTwoOfImages').click(function() {
+
+  $('.horned').hide();
+
+//resets the array
+  animalArray = [];
+
+  $.ajax('data/page-2.json', pullObject).then(animalsFromData);
+
+});
+
+
+$('#setOneOfImages').click(function() {
+
+  $('.horned').hide();
+
+//resets the array
+  animalArray = [];
+
+  $.ajax('data/page-1.json', pullObject).then(animalsFromData);
+
+});
