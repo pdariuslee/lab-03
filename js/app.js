@@ -1,7 +1,7 @@
 'use strict';
 
 // constructor function
-const animalArray = [];
+let animalArray = [];
 const testArray = [];
 
 function Animal (title, image_url, description, keyword, horns){
@@ -14,12 +14,28 @@ function Animal (title, image_url, description, keyword, horns){
   animalArray.push(this);
 }
 
+Animal.prototype.renderImage = function() {
+
+  const $clonedSectionEl = $('#photo-template').clone();
+  // console.log($clonedSectionEl);
+
+  // $clonedSectionEl.find('h2').text(this.name);
+  $clonedSectionEl.find('img').attr('src', this.src)
+    .attr('alt', this.description);
+
+  $clonedSectionEl.attr('class',`horned ${this.keyword}`);
+
+  $('main').append($clonedSectionEl);
+
 
 // ===== render w/ Mustache ===== //
 Animal.prototype.renderMustache = function () {
   const newHtml = Mustache.render($('#photo-template').html(),this);
   $('main').append(newHtml);
 };
+
+
+
 
 Animal.prototype.filterImages = function(){
 
@@ -43,8 +59,7 @@ const animalsFromData = hornedAnimals => {
   });
 
   animalArray.forEach(animalValue => animalValue.renderMustache());
-
-  animalArray.forEach(animalValue => animalValue.filterImages());
+  animalArray.forEach(animal => animal.filterImages());
 
 };
 
@@ -146,3 +161,27 @@ $('select').val();
 */
 
 
+// ================== Pagination
+
+$('#setTwoOfImages').click(function() {
+
+  $('.horned').hide();
+
+//resets the array
+  animalArray = [];
+
+  $.ajax('data/page-2.json', pullObject).then(animalsFromData);
+
+});
+
+
+$('#setOneOfImages').click(function() {
+
+  $('.horned').hide();
+
+//resets the array
+  animalArray = [];
+
+  $.ajax('data/page-1.json', pullObject).then(animalsFromData);
+
+});

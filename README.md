@@ -1,42 +1,42 @@
 # Lab-02
-
-Number and name of feature: Display Images
-
-Estimate of time needed to complete: 1-1.5 hrs
-
-Start time: **3:20pm**
-
-Finish time: **6pm**
-
-Actual time needed to complete: **3 hours**
+=======
 
 
-========
+Number and name of feature: Pagination
+
+Estimate of time needed to complete: 2-3hrs
+
+Start time: 3:30pm
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+---
+
+Number and name of feature: ________________________________
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
 
 
-Number and name of feature: Feature 2 - Filter Images
+---
 
-Estimate of time needed to complete: **2 hours**
+Number and name of feature: Styling with Flexbox
 
-Start time: **8pm**
+Estimate of time needed to complete: 2-3hrs
 
-Finish time: still working
+Start time: _____
 
-Actual time needed to complete: n/a
+Finish time: _____
 
+Actual time needed to complete: _____
 
-========
-
-
-Number and name of feature: Feature 3 - CSS Styling
-
-Estimate of time needed to complete: **2 hours**
-
-Start time: **7:00pm**
-
-Finish time: **8:00pm**
-
-Actual time needed to complete: **1 hour**
 
 ========
 
@@ -91,3 +91,5 @@ Start time:
 Finish time: 
 
 Actual time needed to complete: 
+
+
