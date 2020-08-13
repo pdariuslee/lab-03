@@ -20,7 +20,6 @@ Animal.prototype.renderMustache = function () {
   $('main').append(newHtml);
 };
 
-
 Animal.prototype.filterImages = function(){
 
   if (!testArray.includes(this.keyword)){
@@ -67,7 +66,6 @@ $('#keyword-tab').change(function () {
 
 
 // ====== SORTING FUNCTION + HANDLER ===== //
-
 
 
 $('#sort').change(function () {
