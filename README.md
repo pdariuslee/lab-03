@@ -61,9 +61,9 @@ Estimate of time needed to complete: **1 hour**
 
 Start time: **3:30 pm**
 
-Finish time: 
+Finish time: **4:20 pm**
 
-Actual time needed to complete: 
+Actual time needed to complete: **basically an hour**
 
 
 ========

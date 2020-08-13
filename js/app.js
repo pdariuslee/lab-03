@@ -27,7 +27,7 @@ Animal.prototype.filterImages = function(){
     testArray.push(this.keyword);
     const $clonedOptionEl = $('#dropdown').clone();
     $clonedOptionEl.text(this.keyword);
-    $('select').append($clonedOptionEl);
+    $('#keyword-tab').append($clonedOptionEl);
   }
 };
 
@@ -57,14 +57,74 @@ $.ajax('data/page-1.json', pullObject).then(animalsFromData);
 
 // ====== Event Handler : Filter ===== //
 
-$('select').change(function () {
+$('#keyword-tab').change(function () {
 
-  const selected = $('select option:selected').text();
+  const selected = $('#keyword-tab option:selected').text();
 
   $('.horned').hide();
   $(`.${selected}`).show();
 
 });
+
+
+// ====== Sort Functions ===== //
+
+$('#sort').change(function () {
+
+  const selected = $('#sort option:selected').text();
+
+  // callback sort by Title function
+
+  function sortTitle (a,b) {
+    if (a.name.toLowerCase() > b.name.toLowerCase() ){
+      return 1;
+    } else if (a.name.toLowerCase() < b.name.toLowerCase() ){
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+
+  if (selected === 'Title'){
+    console.log('user selected title');
+
+    animalArray.sort(sortTitle);
+
+    console.log('sorted array by title: ', animalArray);
+
+    $('.horned').hide();
+    animalArray.forEach(potato => potato.renderMustache());
+  }
+
+  if (selected === '# of Horns'){
+    console.log ('user selected horns');
+  }
+
+  // callback sort by horns function
+
+  function sortHorns (a,b){
+    if (a.horns > b.horns) {
+      return 1;
+    } else if (a.horns < b.horns) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+
+
+
+
+
+
+
+});
+
+
+
+
+
+
 
 
 // ====== NOTES ===== //
