@@ -67,13 +67,15 @@ $('#keyword-tab').change(function () {
 });
 
 
-// ====== Sort Functions ===== //
+// ====== SORTING FUNCTION + HANDLER ===== //
+
+
 
 $('#sort').change(function () {
 
   const selected = $('#sort option:selected').text();
 
-  // callback sort by Title function
+  // ========== Sort by TITLE ==========
 
   function sortTitle (a,b) {
     if (a.name.toLowerCase() > b.name.toLowerCase() ){
@@ -96,11 +98,7 @@ $('#sort').change(function () {
     animalArray.forEach(potato => potato.renderMustache());
   }
 
-  if (selected === '# of Horns'){
-    console.log ('user selected horns');
-  }
-
-  // callback sort by horns function
+  // ========== Sort by HORNS ==========
 
   function sortHorns (a,b){
     if (a.horns > b.horns) {
@@ -112,19 +110,18 @@ $('#sort').change(function () {
     }
   }
 
+  if (selected === '# of Horns'){
+    console.log ('user selected horns');
 
+    animalArray.sort(sortHorns);
 
+    console.log ('sorted array by # of HORNS: ', animalArray);
 
-
-
+    $('.horned').hide();
+    animalArray.forEach(potato => potato.renderMustache());
+  }
 
 });
-
-
-
-
-
-
 
 
 // ====== NOTES ===== //
