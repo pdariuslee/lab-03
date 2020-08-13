@@ -2,7 +2,7 @@
 
 // constructor function
 let animalArray = [];
-let testArray = [];
+const testArray = [];
 
 function Animal (title, image_url, description, keyword, horns){
   this.name = title;
@@ -155,8 +155,6 @@ $('#setTwoOfImages').click(function() {
   // testArray = [];
 
   $.ajax('data/page-2.json',pullObject).then(animalsFromData);
-
-  $('#setTwoOfImages').off();
 
 });
 
